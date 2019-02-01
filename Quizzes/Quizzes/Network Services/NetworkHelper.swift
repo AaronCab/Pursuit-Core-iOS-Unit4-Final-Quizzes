@@ -13,7 +13,6 @@ final class NetworkHelper {
   static let shared = NetworkHelper()
   func performDataTask(endpointURLString: String,
                        httpMethod: String,
-                       httpBody: Data?,
                        handler: @escaping (AppError?, Data?) -> Void) {
     guard let url = URL(string: endpointURLString) else {
       handler(AppError.badURL(endpointURLString), nil)
@@ -21,7 +20,6 @@ final class NetworkHelper {
     }
     var request = URLRequest(url: url)
     request.httpMethod = httpMethod
-    request.httpBody = httpBody
     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
       if let error = error {
         handler(AppError.networkError(error), nil)
