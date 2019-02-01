@@ -47,6 +47,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7gx-js-6Dd" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="P7J-xs-WrA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -127,6 +128,7 @@
                     <navigationItem key="navigationItem" id="USb-22-4dt"/>
                     <connections>
                         <outlet property="buttonOutlet" destination="Wza-mF-boh" id="Ahy-Ve-ssS"/>
+                        <outlet property="userLabel" destination="IP9-h7-Zvh" id="CXA-Kx-eHo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5A-tl-1Mz" userLabel="First Responder" sceneMemberID="firstResponder"/>
