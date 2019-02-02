@@ -10,6 +10,7 @@ import UIKit
 
 class SearchQuizzesCellCollectionViewCell: UICollectionViewCell {
     var searchQuizzesView = SearchQuizzesView()
+    var theQuiz: Quiz?
     lazy var label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -21,13 +22,15 @@ class SearchQuizzesCellCollectionViewCell: UICollectionViewCell {
         let button = UIButton()
         button.backgroundColor =  #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
         button.setImage(UIImage(named: "add-icon-filled"), for: .normal)
+        
         return button
     }()
 
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-       
+        
         addSubview(label)
         addSubview(button)
         labelConstraint()
@@ -53,6 +56,6 @@ class SearchQuizzesCellCollectionViewCell: UICollectionViewCell {
         button.widthAnchor.constraint(equalToConstant: 40).isActive = true
         
     }
-
-
+    
+    
 }
