@@ -23,6 +23,7 @@ class CreateViewController: UIViewController {
         quizTitleTextView.becomeFirstResponder()
     }
     private func setupTextViews() {
+        setUpUserDefaults()
         quizTitleTextView.delegate = self
         quizFact1TextView.delegate = self
         quizFact2TextView.delegate = self
@@ -34,6 +35,13 @@ class CreateViewController: UIViewController {
         quizFact1TextView.textColor = .lightGray
         quizFact2TextView.textColor = .lightGray
 
+    }
+    private func setUpUserDefaults(){
+        if UserDefaultKeys.userLogin == ""{
+            showAlert(title: "Not Logged In", message: "Must Log in to account on profile page")
+        } else {
+            showAlert(title: "Welcome Back", message: "\(UserDefaultKeys.userLogin)")
+        }
     }
     private func showAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

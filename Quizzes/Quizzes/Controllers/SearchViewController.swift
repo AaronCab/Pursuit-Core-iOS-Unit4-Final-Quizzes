@@ -29,7 +29,7 @@ let searchQuizzesView = SearchQuizzesView()
             if let error = error {
                 print(error.errorMessage())
             } else if let data = data {
-                self.quiz = data
+                self.quiz = data.sorted{$0.quizTitle < $1.quizTitle}
                 
             }
         }
