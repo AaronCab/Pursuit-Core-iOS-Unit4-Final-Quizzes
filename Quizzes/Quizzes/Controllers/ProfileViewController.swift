@@ -22,6 +22,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         setupImagePickerViewController()
         configureNavBarAndLabel()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        setupImagePickerViewController()
+        configureNavBarAndLabel()
+    }
     private var imagePickerViewController: UIImagePickerController!
     private func showImagePickerController(){
         present(imagePickerViewController, animated: true, completion: nil)

@@ -52,7 +52,6 @@ extension SearchViewController: UICollectionViewDataSource{
         cell.label.text = quizToSet.quizTitle
         cell.button.layer.setValue(indexPath.row, forKey: "index")
         cell.button.addTarget(self, action: #selector(favorite), for: .touchUpInside)
-        print(QuizModel.getQuiz())
         return cell
     }
     
@@ -88,9 +87,7 @@ extension SearchViewController: UICollectionViewDataSource{
             return
         }
         let favoriteQuiz = FavoriteQuiz.init(quizTitle: (quiz[i].quizTitle), fact1: (quiz[i].facts[0]), fact2: (quiz[i].facts[1]), createdAt: timestamp)
-       print(QuizModel.getQuiz())
         QuizModel.addQuiz(quiz: favoriteQuiz)
-        print(QuizModel.getQuiz())
         showAlert(title: "Succesfully Favorited Book", message: "")
     
         
@@ -99,3 +96,4 @@ extension SearchViewController: UICollectionViewDataSource{
     }
     
 }
+
