@@ -28,11 +28,28 @@ extension DetailViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailCell", for: indexPath) as? DetailCollectionViewCell else { return UICollectionViewCell() }
-      
-        cell.label.text = theQuiz.quizTitle
+        if indexPath.row % 2 == 0 {
+            cell.label.text = theQuiz.fact1
+
+        } else {
+            cell.label.text = theQuiz.fact2
+
+        }
+    
         return cell
 
     }
     
     
+}
+extension DetailViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        UIView.transition(with: self.detailView, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            if indexPath.row % 2 == 0 {
+                
+            } else {
+                
+            }
+        })
+    }
 }
