@@ -80,6 +80,11 @@ class CreateViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        setupTextViews()
+        quizTitleTextView.becomeFirstResponder()
+
+    }
 }
 extension CreateViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {

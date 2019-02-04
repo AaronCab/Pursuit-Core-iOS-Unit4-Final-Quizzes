@@ -116,6 +116,11 @@
                         <viewLayoutGuide key="safeArea" id="2hM-iH-dHJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ebw-RO-i2I">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="Iz6-So-Cjb">
+                            <connections>
+                                <action selector="cancel:" destination="4L3-td-LU4" id="5dS-ov-EZ5"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="1ZV-Bm-55k">
                             <connections>
                                 <action selector="addButton:" destination="4L3-td-LU4" id="ZMJ-xm-It0"/>
