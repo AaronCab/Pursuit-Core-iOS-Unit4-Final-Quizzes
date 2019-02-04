@@ -20,7 +20,7 @@ class QuizViewCell: UICollectionViewCell {
     lazy var button: UIButton = {
         let button = UIButton()
         button.backgroundColor =  #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
-        button.setImage(UIImage(named: "add-icon-filled"), for: .normal)
+        button.setImage(UIImage(named: "more-filled"), for: .normal)
         return button
     }()
     

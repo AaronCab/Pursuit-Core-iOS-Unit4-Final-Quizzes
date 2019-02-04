@@ -10,11 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController {
 let searchQuizzesView = SearchQuizzesView()
-    var link = SearchViewController?.self
-    public func currentIndex(currentIndex: Int) -> Int{
-        return currentIndex
-    }
-    var quiz = [Quiz](){
+        var quiz = [Quiz](){
         didSet{
             DispatchQueue.main.async {
                 self.searchQuizzesView.colloectionView.reloadData()
