@@ -22,6 +22,7 @@ class QuizViewController: UIViewController {
     view.addSubview(quizView)
     quizView.colloectionView.register(QuizViewCell.self, forCellWithReuseIdentifier: "QuizCell")
     quizView.colloectionView.dataSource = self
+    quizView.colloectionView.delegate = self
     quiz = QuizModel.getQuiz()
   }
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +57,17 @@ extension QuizViewController: UICollectionViewDataSource{
         alertController.addAction(deleteAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true)
+    }
+}
+extension QuizViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let thisQuiz = quiz[indexPath.row]
+        
+        
+        let detailVC = DetailViewController()
+        detailVC.theQuiz = thisQuiz
+        navigationController?.pushViewController(detailVC, animated: true)
+        
     }
 }
 
